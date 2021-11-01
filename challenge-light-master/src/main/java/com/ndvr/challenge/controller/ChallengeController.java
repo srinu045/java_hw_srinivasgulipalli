@@ -33,7 +33,7 @@ public class ChallengeController {
     }
 
     @RequestMapping("{asset}/projected")
-    public List<Pricing> getProjectedAssetData(@PathVariable Asset asset) {
-        return challengeService.getProjectedAssetData(asset);
+    public List<Pricing> getProjectedAssetData(@PathVariable Asset asset,@RequestParam(required=false,defaultValue="240") int numberOfMonths) {
+        return challengeService.getProjectedAssetData(asset,numberOfMonths);
     }
 }
